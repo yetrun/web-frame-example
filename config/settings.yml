@@ -1,0 +1,3 @@
+zeitwerk:
+  enable_logger: false
+  auto_reloading: false

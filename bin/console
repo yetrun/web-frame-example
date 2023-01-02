@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+require 'pathname'
+
+# 获取环境文件（绝对路径）
+environment_file = Pathname.new(__dir__).join('../config/environment.rb').realpath.to_s
+
+# 进入 IRB 环境
+exec('bundle', 'exec', 'irb', '-r', environment_file)
+
+# 如果你更喜欢 Pry 环境，使用下面的命令
+# exec('bundle', 'exec', 'pry', '-e', "require_relative '#{environment_file}'")

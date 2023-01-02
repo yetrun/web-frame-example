@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+
+if ARGV.length <= 0
+  puts <<~EOF
+  在项目环境下执行脚本，使用方法：
+
+      bin/run <script-path> arg1 arg2 ...\n
+  EOF
+  exit
+end
+
+require 'bundler/setup'
+require_relative '../config/environment'
+
+filepath = ARGV.shift
+realpath = Pathname.new(__dir__).join('..', filepath).to_s
+load realpath

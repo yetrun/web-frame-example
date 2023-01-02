@@ -1,0 +1,17 @@
+# 忽略 IDE 配置和本地环境配置
+/.idea
+.DS_Store
+.autoenv.zsh
+.ruby-version
+
+# 忽略 Bundler 配置和安装的 Gems
+/.bundle
+/vendor
+
+# 忽略 Sqlite 数据库文件
+/db/sqlite3/*.sqlite3
+/db/sqlite3/*.sqlite3-journal
+
+# 忽略本地配置文件
+/config/settings.local.yml
+/config/settings/*.local.yml
