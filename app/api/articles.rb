@@ -5,7 +5,7 @@ module API
     get '/articles' do
       title '获取文章列表'
       status 200 do
-        expose :articles, type: 'array', using: ArticleEntity
+        expose :articles, type: 'array', ref: ArticleEntity
       end
       action do
         articles = Article.all
@@ -16,10 +16,10 @@ module API
     post '/articles' do
       title '新建文章'
       params do
-        param :article, required: true, using: ArticleEntity.lock_scope('full')
+        param :article, required: true, ref: ArticleEntity.lock_scope('full')
       end
       status 201 do
-        expose :article, using: ArticleEntity.lock_scope('full')
+        expose :article, ref: ArticleEntity.lock_scope('full')
       end
       action do
         article = Article.create!(params[:article])
@@ -34,7 +34,7 @@ module API
         param :id, type: 'integer', in: 'path', description: '文章实体的 id'
       end
       status 200 do
-        expose :article, required: true, using: ArticleEntity.lock_scope('full')
+        expose :article, required: true, ref: ArticleEntity.lock_scope('full')
       end
       action do
         article = Article.find(params[:id])
@@ -48,10 +48,10 @@ module API
         param :id, type: 'integer', in: 'path', description: '文章实体的 id'
       end
       request_body do
-        property :article, required: true, using: ArticleEntity.locked(scope: 'full', discard_missing: true)
+        property :article, required: true, ref: ArticleEntity.locked(scope: 'full', discard_missing: true)
       end
       status 200 do
-        property :article, using: ArticleEntity.lock_scope('full')
+        property :article, ref: ArticleEntity.lock_scope('full')
       end
       action do
         article = Article.find(params[:id])
