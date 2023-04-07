@@ -2,6 +2,7 @@
 
 require 'bundler/setup'
 require 'rack'
+require_relative 'lib/middlewares/set_i18n_locale'
 
 require_relative 'config/environment'
 
@@ -21,5 +22,8 @@ use Rack::Cors do
     resource '*', headers: :any, methods: :any
   end
 end
+
+use SetI18nLocale, :'zh-CN'
 use OTR::ActiveRecord::ConnectionManagement
+
 run ->(env) { API::Applications::Main.call(env) }
