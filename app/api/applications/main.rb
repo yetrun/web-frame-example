@@ -31,6 +31,16 @@ module API
         response.body = [JSON.generate(error_entity)]
       end
 
+      rescue_error Meta::Errors::UnsupportedContentType do |e|
+        error_entity = {
+          code: 'unsupported_content_type',
+          message: e.message
+        }
+
+        response.status = 400
+        response.body = [JSON.generate(error_entity)]
+      end
+
       rescue_error StandardError do |e|
         error_entity = {
           code: 'server_error',
