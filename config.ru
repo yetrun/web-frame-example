@@ -16,13 +16,13 @@ map '/api_spec' do
   run ->(env) { API::Applications::Doc.call(env) }
 end
 
+# 这里的 use 不能与 map '/api_spec' 中的共享
 use Rack::Cors do
   allow do
     origins '*'
     resource '*', headers: :any, methods: :any
   end
 end
-
 use SetI18nLocale, :'zh-CN'
 use OTR::ActiveRecord::ConnectionManagement
 

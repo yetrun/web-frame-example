@@ -31,7 +31,7 @@ module API
     get '/articles/:id' do
       title '获取文章详情'
       parameters do
-        param :id, type: 'integer', in: 'path', description: '文章实体的 id'
+        param :id, type: 'integer', required: true, in: 'path', description: '文章实体的 id'
       end
       status 200 do
         expose :article, required: true, ref: ArticleEntity.lock_scope('full')
@@ -45,7 +45,7 @@ module API
     patch '/articles/:id' do
       title '更新文章'
       parameters do
-        param :id, type: 'integer', in: 'path', description: '文章实体的 id'
+        param :id, type: 'integer', required: true, in: 'path', description: '文章实体的 id'
       end
       request_body do
         property :article, required: true, ref: ArticleEntity.locked(scope: 'full', discard_missing: true)
@@ -63,7 +63,7 @@ module API
     delete '/articles/:id' do
       title '删除文章'
       parameters do
-        param :id, type: 'integer', in: 'path', description: '文章实体的 id'
+        param :id, type: 'integer', required: true, in: 'path', description: '文章实体的 id'
       end
       action do
         article = Article.find(params[:id])
