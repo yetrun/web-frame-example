@@ -22,5 +22,5 @@ group :test do
 end
 
 group :test, :development do
-  gem 'pry-byebug'
+  gem 'pry-byebug', require: false
 end
