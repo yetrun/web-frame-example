@@ -41,3 +41,4 @@ end
 # 引入项目环境
 ENV['RACK_ENV'] = ENV['RACK_ENV'] || 'test'
 require_relative '../config/environment'
+I18n.locale = :'zh-CN'
