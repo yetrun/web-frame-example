@@ -1,11 +1,7 @@
 # frozen_string_literal: true
 
 require 'bundler/setup'
-# Ruby 3.2 版本引入 'pry' 会报错：
-#
-#     NameError:
-#       undefined method `=~' for class `Pry::Code'
-require 'pry' if ENV['RACK_ENV'] != 'production' && Gem::Version.new(RUBY_VERSION) < '3.2'
+require 'pry' if ENV['RACK_ENV'] != 'production'
 
 ENV['RACK_ENV'] ||= 'development'
 Bundler.require(:default, ENV['RACK_ENV'])
