@@ -55,6 +55,7 @@ module API
       get '/' do
         title '应用根路由'
         action do
+          response.content_type = 'text/plain'
           response.body = ['Web API 示例项目']
         end
       end

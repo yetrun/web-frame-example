@@ -65,7 +65,7 @@ GEM
     listen (3.7.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
-    meta-api (0.0.5)
+    meta-api (0.0.6)
     method_source (1.0.0)
     minitest (5.18.0)
     otr-activerecord (2.1.2)
@@ -113,7 +113,7 @@ DEPENDENCIES
   database_cleaner-active_record
   factory_bot
   listen
-  meta-api (~> 0.0.5)
+  meta-api (~> 0.0.6)
   otr-activerecord
   pry-byebug
   rack
