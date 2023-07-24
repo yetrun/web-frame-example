@@ -65,10 +65,10 @@ module API
       parameters do
         param :id, type: 'integer', required: true, in: 'path', description: '文章实体的 id'
       end
+      status 204
       action do
         article = Article.find(params[:id])
         article.destroy!
-        response.status = 204
       end
     end
   end

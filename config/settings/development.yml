@@ -1,2 +1,5 @@
 zeitwerk:
   auto_reloading: true
+
+api_spec:
+  websocket: true

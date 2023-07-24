@@ -13,6 +13,7 @@ map '/api_spec' do
       resource '*', headers: :any, methods: :get
     end
   end
+  use API::Applications::Doc::WebSocketConnection
   run ->(env) { API::Applications::Doc.call(env) }
 end
 

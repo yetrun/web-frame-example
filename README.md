@@ -24,8 +24,25 @@
 
 启动服务器后通过以下路径访问资源：
 
-- API: `http://localhost:9292/*`.
+- API: `http://localhost:9292`.
 - OpenAPI 文档：`http://localhost:9292/api_spec`.
+
+## 开发
+
+开发环境支持常量自动重载，修改代码后无需重启服务器。
+
+此外，开发环境支持 API 文档实时预览，以下是操作步骤：
+
+1. 启动服务器：`$ bundle exec rackup`.
+2. 浏览器中输入：[http://openapi.maikeji.cn/playground?url=ws%3A%2F%2Flocalhost%3A9292%2Fapi_spec](http://openapi.maikeji.cn/playground?url=ws%3A%2F%2Flocalhost%3A9292%2Fapi_spec).
+
+即可启动 API 文档实时预览工作。
+
+> Chrome 浏览器下默认会禁用 localhost 地址的连接，需要调整相关的设置以解除限制。在 Chrome 浏览器中打开以下地址：
+>
+> [chrome://flags/#block-insecure-private-network-requests](chrome://flags/#block-insecure-private-network-requests)
+>
+> 将其设置为 `Disabled`，然后重启浏览器即可。
 
 ## 部署
 

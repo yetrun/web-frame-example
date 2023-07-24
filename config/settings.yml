@@ -1,7 +1,10 @@
 meta:
-  render_type_conversion: true
-  render_validation: true
+  json_schema:
+    render_stage_user_options: {}
 
 zeitwerk:
   enable_logger: false
   auto_reloading: false
+
+api_spec:
+  websocket: false

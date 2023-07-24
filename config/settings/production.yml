@@ -1,3 +1,5 @@
 meta:
-  render_type_conversion: false
-  render_validation: false
+  json_schema:
+    render_stage_user_options:
+      type_conversion: false
+      validation: false

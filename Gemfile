@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'meta-api', '~> 0.0.6'
+gem 'meta-api', '~> 0.1.0'
 gem 'rack'
 gem 'rack-cors'
 gem 'rake'
@@ -8,10 +8,11 @@ gem 'otr-activerecord'
 gem 'sqlite3'
 gem 'config'
 gem 'zeitwerk'
-gem 'listen'
+gem 'puma'
 
 group :development do
-  gem 'webrick'
+  gem 'listen'
+  gem 'faye-websocket'
 end
 
 group :test do

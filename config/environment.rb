@@ -14,3 +14,4 @@ require_relative 'initializers/autoload'
 require_relative 'initializers/database'
 require_relative 'initializers/application'
 require_relative 'initializers/config_meta'
+require_relative 'initializers/websocket' if Settings.api_spec.websocket
