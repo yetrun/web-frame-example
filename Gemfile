@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'meta-api', '~> 0.1.0'
+gem 'meta-api', '~> 0.2.0'
 gem 'rack'
 gem 'rack-cors'
 gem 'rake'
